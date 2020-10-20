@@ -8,5 +8,5 @@ Plugin for Graviton Editor that show color bullets next to each color.
 - [ ] Refactor
 
 ## Screenshots
-[!demo-dark](https://i.imgur.com/dNRHQMo.png)
-[!demo-light](https://i.imgur.com/fcJcFYE.png)
+![demo-dark](https://i.imgur.com/dNRHQMo.png)
+![demo-light](https://i.imgur.com/fcJcFYE.png)
