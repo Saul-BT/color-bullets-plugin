@@ -1,0 +1,9 @@
+{
+  "name": "colorBullets",
+  "name": "color-bullets",
+  "version": "1.0.0",
+  "description": "Shows a color bullet next to the color",
+  "main": "index.js",
+  "scripts": { },
+  "author": "saul-bt"
+}
