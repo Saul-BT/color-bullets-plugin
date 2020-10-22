@@ -1,10 +1,11 @@
 # color-bullets
-Plugin for Graviton Editor that show color bullets next to each color.
+Plugin for [Graviton Editor](https://github.com/Graviton-Code-Editor/Graviton-App) that shows color bullets next to each color.
 
 ## TO-DO
 - [ ] Color name support (cyan, blue, purple...)
 - [ ] Line with more than one color
 - [x] Bullet update on edit
+- [ ] Add color picker on click
 - [ ] Refactor
 
 ## Screenshots
