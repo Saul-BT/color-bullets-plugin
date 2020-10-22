@@ -4,7 +4,7 @@ Plugin for Graviton Editor that show color bullets next to each color.
 ## TO-DO
 - [ ] Color name support (cyan, blue, purple...)
 - [ ] Line with more than one color
-- [ ] Bullet update on edit
+- [x] Bullet update on edit
 - [ ] Refactor
 
 ## Screenshots
