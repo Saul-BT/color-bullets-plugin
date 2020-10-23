@@ -1,4 +1,4 @@
-function entry(API) {
+export function entry(API) {
   const bookmarks = new Map()
   const styleExtensions = [ 'css' ]
 
@@ -81,5 +81,3 @@ function entry(API) {
     })
   })
 }
-
-module.exports = { entry }

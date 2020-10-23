@@ -1,9 +1,16 @@
 {
-  "name": "colorBullets",
   "name": "color-bullets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shows a color bullet next to the color",
+  "author": "saul-bt",
   "main": "index.js",
-  "scripts": { },
-  "author": "saul-bt"
+  "mainSrc":"index.js",
+  "mainDev":"dist/index.js",
+  "scripts": {
+    "build": "gvsdk -p . -t plugin -m release",
+    "watch": "gvsdk -p . -t plugin -m dev"
+  },
+  "devDependencies": {
+    "@gveditor/sdk": "^0.4.4"
+  }
 }

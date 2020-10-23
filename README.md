@@ -12,3 +12,14 @@ Plugin for [Graviton Editor](https://github.com/Graviton-Code-Editor/Graviton-Ap
 ## Screenshots
 ![demo-dark](https://i.imgur.com/dNRHQMo.png)
 ![demo-light](https://i.imgur.com/fcJcFYE.png)
+
+## Contributing
+While developing:
+```shell
+npm run watch
+```
+
+To compile:
+```shell
+npm run build
+```
