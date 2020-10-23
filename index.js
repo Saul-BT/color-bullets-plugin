@@ -3,24 +3,28 @@ function entry(API) {
   const styleExtensions = [ 'css' ]
 
   function detectColor(text) {
+    let matches = [];
+    
     const reColors = {
-      HEX: /#(?!.{5}\b)[A-F0-9]{3,6}\b/i,
-      RGBA: /rgba\((?<rgb>(1?\d{1,2}|2[0-4]\d|25[0-5])\s*,\s*){3}(?<alpha>(?<=0|\s|,)0?\.\d+|1|0)\)/i,
-      HSLA: /hsla\((?<hue>\d+(deg)?)\s*,\s*(?<sl>(\d{1,2}|100)%\s*,\s*){2}(?<alpha>(?<=0|\s|,)0?\.\d+|1|0)\)/i,
+      HEX: /#([A-F0-9]{6}|[A-F0-9]{3,4})\b/gi,
+      RGBA: /rgba\((?<rgb>(1?\d{1,2}|2[0-4]\d|25[0-5])\s*,\s*){3}(?<alpha>(?<=0|\s|,)0?\.\d+|1|0)\)/gi,
+      HSLA: /hsla\((?<hue>\d+(deg)?)\s*,\s*(?<sl>(\d{1,2}|100)%\s*,\s*){2}(?<alpha>(?<=0|\s|,)0?\.\d+|1|0)\)/gi,
     }
 
     for (let format in reColors) {
       let re = reColors[format]
       
       if (re.test(text))
-        return text.match(re)[0]
+        matches.push(...text.match(re))
     }
+    
+    return matches
   }
 
   
   function showColorBullet(instance, color, line, ch) {
     let bullet = document.createElement('span')
-
+    
     bullet.style.cssText = `
       margin: 0 5px;
       padding: 0.35em;
@@ -33,19 +37,25 @@ function entry(API) {
       { line, ch },
       { widget: bullet }
     )
-    bookmarks.set(line, b)
+    
+    if (bookmarks.has(line))
+      bookmarks.get(line).push(b)
+    else
+    	bookmarks.set(line, [b])
   }
   
   
   function processLine(cm, line, text) {
-    let color = detectColor(text)
+    let colors = detectColor(text)
       
     if (bookmarks.has(line))
-      bookmarks.get(line).clear()
+      bookmarks.get(line).forEach(b => b.clear())
       
-    if (color) {
-      let ch = text.indexOf(color) + color.length
-      showColorBullet(cm, color, line, ch)
+    if (colors) {
+      colors.forEach(color => {
+        let ch = text.indexOf(color) + color.length
+        showColorBullet(cm, color, line, ch)
+      })
     }
   }
 
@@ -56,7 +66,7 @@ function entry(API) {
     if (styleExtensions.indexOf(path.split('.').pop()) === -1)
       return
 
-    let line = 0, ch = 0
+    let line = 0
     
     instance.on('change', (cm, data) => {
       let { text } = cm.state.activeLines[0]

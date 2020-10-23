@@ -3,8 +3,9 @@ Plugin for [Graviton Editor](https://github.com/Graviton-Code-Editor/Graviton-Ap
 
 ## TO-DO
 - [ ] Color name support (cyan, blue, purple...)
-- [ ] Line with more than one color
+- [x] Line with more than one color
 - [x] Bullet update on edit
+- [ ] Add demo git to the readme
 - [ ] Add color picker on click
 - [ ] Refactor
 
