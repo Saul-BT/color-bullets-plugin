@@ -4,8 +4,8 @@
   "description": "Shows a color bullet next to the color",
   "author": "saul-bt",
   "main": "index.js",
-  "mainSrc":"index.ts",
-  "mainDev":"dist/index.js",
+  "mainSrc": "index.ts",
+  "mainDev": "dist/index.js",
   "scripts": {
     "build": "gvsdk -p . -t plugin -m release",
     "watch": "gvsdk -p . -t plugin -m dev"
