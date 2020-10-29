@@ -1,5 +1,6 @@
 {
-  "name": "color-bullets",
+  "name": "Color Bullets",
+  "id":"color-bullets",
   "version": "1.0.1",
   "description": "Shows a color bullet next to the color",
   "author": "saul-bt",

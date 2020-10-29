@@ -14,12 +14,29 @@ Plugin for [Graviton Editor](https://github.com/Graviton-Code-Editor/Graviton-Ap
 ![demo-light](https://i.imgur.com/fcJcFYE.png)
 
 ## Contributing
+
+Prerequisites:
+
+- [NodeJS (LTS version)](https://nodejs.org/en/)
+- [Git](https://git-scm.com/)
+
+
+Clone the repository:
+```shell
+git clone https://github.com/Saul-BT/color-bullets-plugin.git
+```
+
+Install dependencies:
+```shell
+npm install
+```
+
 While developing:
 ```shell
 npm run watch
 ```
 
-To compile:
+To make a build:
 ```shell
 npm run build
 ```
